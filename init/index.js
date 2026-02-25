@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const data = require("./data.js");
-const listing = require("../models/listing.js");
+const initData = require("./data.js");
+const Listing = require("../models/listing.js");
 
 const connectDB = async () => {
   try {
@@ -13,9 +13,15 @@ const connectDB = async () => {
 };
 
 const initDB = async () => {
-    await listing.deleteMany({});
-    await listing.insertMany(initData.data);
-    console.log("Data was initialized");
+  await Listing.deleteMany({});
+  await Listing.insertMany(initData.data);
+  console.log("Data was initialized");
 };
 
-initDB();
+const start = async () => {
+  await connectDB();   
+  await initDB();      
+  mongoose.connection.close();
+};
+
+start();

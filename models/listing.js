@@ -11,11 +11,10 @@ const listingSchema = new Schema({
         type: String,
         requried: true,
     },
-    image: {
-        type: String,
-        default:"https://unsplash.com/photos/modern-house-with-wooden-deck-in-snowy-landscape-Wd8Nm8iXglQ",
-        set:(v) => v ===""?"https://unsplash.com/photos/modern-house-with-wooden-deck-in-snowy-landscape-Wd8Nm8iXglQ" :v,
-    },
+      image: {
+    filename: String,
+    url: String,
+      },
     price:{
         type: Number,
         requried: true,
