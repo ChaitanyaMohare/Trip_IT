@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 
 app.get("/listings", async (req, res) => {
   const allListings = await Listing.find({});
-  res.render("/listing/index.ejs", { allListings });
+  res.render("listing/index", { allListings });
 });
 
 // app.get("/testlisting", async (req, res) => {
