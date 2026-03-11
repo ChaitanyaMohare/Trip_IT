@@ -33,6 +33,10 @@ app.get("/listings", async (req, res) => {
   res.render("listing/index", { allListings });
 });
 
+app.get("/listings/:id", async (req,res) =>{
+  let id = req.params
+}
+
 // app.get("/testlisting", async (req, res) => {
 //   let sampleListing = new Listing({
 //     title: "My new Home",
